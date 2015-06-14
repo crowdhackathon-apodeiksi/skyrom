@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+             http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+    
+    <beans:bean id="loginSuccessHandler" class="io.skyrom.taxmachina.wserv.auth.LoginSuccessHandler"/>
+    <beans:bean id="loginFailureHandler" class="io.skyrom.taxmachina.wserv.auth.LoginFailureHandler"/>
+    <beans:bean id="logoutSuccessHandler" class="io.skyrom.taxmachina.wserv.auth.LogoutSuccessHandler"/>
+    <beans:bean id="restAuthenticationEntryPoint" class="io.skyrom.taxmachina.wserv.auth.RestAuthenticationEntryPoint"/>
+    
+    <http auto-config="false" pattern="/rs/**" entry-point-ref="restAuthenticationEntryPoint" use-expressions="true">
+        <intercept-url pattern="/rs/login" access="permitAll"/>
+        <intercept-url pattern="/rs/v*/user/signup" access="permitAll"/>
+        <intercept-url pattern="/rs/v*/qrcode/**" access="permitAll"/>
+        <intercept-url pattern="/rs/v*/cashier/**" access="hasRole('ROLE_CASHIER')"/>
+        <intercept-url pattern="/rs/**" access="isAuthenticated()"/>
+        <form-login
+            login-processing-url="/rs/login"
+            username-parameter="email"
+            password-parameter="password"
+            authentication-success-handler-ref="loginSuccessHandler"
+            authentication-failure-handler-ref="loginFailureHandler" />
+        <access-denied-handler />
+        <logout logout-url="/rs/logout" success-handler-ref="logoutSuccessHandler" delete-cookies="JSESSIONID" invalidate-session="true" />
+    </http>
+    
+    <beans:bean id="userDetailsServiceManager" class="io.skyrom.taxmachina.wserv.auth.UserDetailsServiceManager" scope="singleton" >
+        <beans:property name="userDAO" ref="userDAO"/>
+    </beans:bean>
+    
+    <beans:bean id="userDetailsManager" class="io.skyrom.taxmachina.wserv.auth.UserDetailsManager" scope="prototype" />
+    
+    <beans:bean id="authManager" class="io.skyrom.taxmachina.wserv.auth.AuthenticationManager" scope="singleton" >
+        <beans:property name="hashVerter" ref="hashVerter"/>
+        <beans:property name="userDetailsService" ref="userDetailsServiceManager"/>
+    </beans:bean>
+ 
+    <authentication-manager>
+        <authentication-provider ref="authManager"/>
+    </authentication-manager>
+    
+</beans:beans>

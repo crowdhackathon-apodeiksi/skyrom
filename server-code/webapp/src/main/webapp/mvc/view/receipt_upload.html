@@ -1,0 +1,49 @@
+<div id="wrapper">
+
+    <div ng-include="'tiles/menu.html'"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header"><i class="fa fa-upload fa-fw"></i> Upload</h2>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" >Upload receipt</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <div ngf-drop ngf-select ng-model="file" class="drop-box" 
+                                     ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="false"
+                                     accept="image/*">Drop images here or click to upload</div>
+                                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                                <br>
+                                Files:
+                                <ul>
+                                    <li style="font:smaller">{{file.name}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'tiles/footer.html'"></div>
+
+
+</div>

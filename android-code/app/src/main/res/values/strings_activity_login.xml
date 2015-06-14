@@ -1,0 +1,14 @@
+<resources>
+    <string name="title_activity_login">Tax Machine</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Κωδικός Χρήστη</string>
+    <string name="action_sign_in">Είσοδος</string>
+    <string name="action_sign_in_short">Είσοδος</string>
+
+    <string name="error_invalid_email">Το email δεν είναι έγκυρο</string>
+    <string name="error_invalid_password">Ο κωδικός είναι πολύ μικρός</string>
+    <string name="error_incorrect_password">Λάθος κωδικός</string>
+    <string name="error_field_required">Υποχρεωτικό πεδίο</string>
+</resources>

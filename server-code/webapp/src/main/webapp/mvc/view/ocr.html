@@ -1,0 +1,72 @@
+
+
+<div id="wrapper">
+
+    <div ng-include="'tiles/menu.html'"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header"><i class="fa fa-leaf fa-fw"></i> OCR</h2>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" >Upload to Ocr</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <div ngf-drop ngf-select ng-model="file" class="drop-box" 
+                                     ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="false"
+                                     accept="image/*">Drop images here or click to upload</div>
+                                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                                <br>
+                                <label>
+                                    <input name="data" type="radio" ng-model="radioValue" value="afm" checked>
+                                    ΑΦΜ
+                                    <span>{{afm}}</span>
+                                </label><br/>
+                                <label>
+                                    <input name="data" type="radio" ng-model="radioValue" value="price">
+                                    Τιμή
+                                    <span>{{price}}</span>
+                                </label><br/>
+                                <label>
+                                    <input name="data" type="radio" ng-model="radioValue" value="aa">
+                                    Α/Α
+                                    <span>{{aa}}</span>
+                                </label>
+                                <br>
+                                <div>
+                                <tm-img-cropped style="width:100%" ng-show="uploadedImage" src='{{imgSrc + uploadedImage}}' selected='selected(cords)' />
+                                </div>   
+                                <br/>
+                                <button type="button" class="btn btn-sm btn-success" ng-click="uploadData()"><i class="fa fa-fw fa-upload"></i> Upload</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'tiles/footer.html'"></div>
+
+
+</div>
+
+<script src="js/jcrop.jquery.min.js"></script>
+<script src="js/jquery.Jcrop.js"></script>

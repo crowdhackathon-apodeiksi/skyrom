@@ -1,0 +1,78 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/"><img src="images/logo.png" width="50" align="left" />&nbsp;Tax Machina</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            
+            <ul class="nav navbar-nav">
+                <li ng-class="{'active': 'dashboard' === active[0]}"><a href="#/nav/dashboard">Dashboard </span></a></li>
+                <li ng-class="{'active': 'receipt' === active[0]}" class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Receipt <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/nav/receipt/upload">Upload</a></li>
+                        <li><a href="#/nav/ocr">Ocr</a></li>
+                        
+                    </ul>
+                </li>
+                <li ng-class="{'active': 'shop' === active[0]}" class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Shop <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/nav/compform">Create competition</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Stats</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div >
+                <form class="navbar-form navbar-left" role="search"  ng-submit="search()">
+                    <div class="form-group">
+                        <input ng-model="queryString" type="text" class="form-control" placeholder="Search for branches..">
+                    </div>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-fw fa-search"></i></button>
+                </form>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <i class="fa fa-envelope"></i> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="">Some message 1</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Some message 2</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="">Profile</a></li>
+                        <li class="divider"></li>
+                        <li ng-controller="AuthCtrl">
+                            <a href="" ng-click="logout()">
+                                <i class="fa fa-sign-out fa-fw"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,41 @@
+<resources>okunexpected_error
+    <string name="app_name">Tax Machine</string>
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="title_activity_main">Αρχική Σελίδα</string>
+    <string name="unexpected_error">Υπήρξε ένα τεχνικό πρόβλημα. Παρακαλώ προσπαθήστε ξανά.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Άκυρο</string>
+    <string name="no_internet">Δεν υπάρχει σύνδεση με το διαδίκτυο.</string>
+    <string name="title_activity_crop">Λειτουργία Προσαρμογής Εικόνας</string>
+    <string name="title_activity_show_receipt">Προβολή Απόδειξης</string>
+    <string name="title_activity_receipts">Αποδείξεις</string>
+    <string name="title_activity_qr_code">Αποθήκευση QR code</string>
+    <string name="show_receipts">Προβολή Αποδείξεων</string>
+    <string name="has_qr_code">Η απόδειξη έχει QR code?</string>
+    <string name="yes">Ναι</string>
+    <string name="no">Όχι</string>
+    <string name="press_to_add_receipt">Πιέστε το κουμπί για να προσθέσετε μια νέα απόδειξη.</string>
+    <string name="upload">Ανέβασμα</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
+    <string name="title_section1">Αρχική Σελίδα</string>
+    <string name="title_section2">Οι Αποδείξεις μου</string>
+    <string name="title_section3">Οι Διαγωνισμοί μου</string>
+    <string name="title_section4">Διαγωνισμοί</string>
+    <string name="title_section5">Αποδύνδεση</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="more">Περισσότερα...</string>
+    <string name="receipt_uploaded">Η απόδειξη ανέβηκε με επιτυχία.</string>
+    <string name="receipt_already_uploaded">Η απόδειξη έχει ήδη ανέβει!</string>
+    <string name="afm">ΑΦΜ:</string>
+    <string name="total_price">Συνολικό Ποσό:</string>
+    <string name="date">Ημερονηνία:</string>
+</resources>

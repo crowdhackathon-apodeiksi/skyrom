@@ -1,0 +1,92 @@
+<div id="wrapper">
+
+    <div ng-include="'tiles/menu.html'"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header"><i class="fa fa-paper-plane fa-fw"></i> Δημιουργία διαγωνισμού</h2>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" >Δημιουργήστε διαγωνισμό και φέρτε πιο κοντά τους πελάτες σας!</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <form>
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label>Τίτλος</label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Ημερομηνία</label>
+                                            <p class="input-group">
+                                                <input placeholder="Select date" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dtFrom" is-open="opened['f']" close-text="Close" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open($event, 'f')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Δώρο</label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Σελίδα</label>
+                                            <input class="form-control" type="text" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label><input name="rd" type="radio" /> Διαθέσιμο σε όλους</label><br>
+                                            <label><input name="rd" type="radio" /> Διαθέσιμο στους πελάτες μου</label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button class="btn btn-sm btn-primary" ng-click="saveComp()"><i class="fa fa-fw fa-save"></i> Δημιουργία</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Απήχηση στο κοινό
+                            </div>
+                            <div class="panel-body">
+                                <div id="apixisi-pie-container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'tiles/footer.html'"></div>
+
+
+</div>
